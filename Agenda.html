@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+var agenda = new Array()
+
+function gerar(name, number) {
+    agenda.push([name, number])
+    return agenda
+}
+
+function listar(array) {
+    let texto = ""
+    for (let i = 0; i < array.length; i++) {
+        texto += (`Nome: ${array[i][0]} Número: ${array[i][1]} \n`)
+    }
+    return window.alert(String(texto))
+}
+
+function buscar(name, array) {
+    for (let i = 0; i < array.length; i++) {
+        if (name == array[i][0]) {
+            return window.alert(String(` Nome: ${array[i][0]} \n Número: ${array[i][1]} \n`))
+        } else {
+            return window.alert("Não existe esse número.")
+        }
+    }
+}
+
+function deletar(number, array) {
+    for (let i = 0; i < array.length; i++) {
+        if (number == array[i][1]) {
+            array.splice(i, i + 1)
+            return window.alert("O número foi excluido.")
+
+        } else {
+            return window.alert("Não existe esse número.")
+        }
+    }
+}
+
+do {
+    var select = prompt(` Gravar - 1
+    \n Listar - 2
+    \n Buscar - 3
+    \n Excluir - 4`)
+
+    if (select == "1") {
+        let name = prompt("Nome do contato: ")
+        let number = prompt("Número do contato: ")
+        var access = gerar(name, number)
+
+    } else if (select == "2") {
+        listar(access)
+
+    } else if (select == "3") {
+        let number = prompt("Nome do contato: ")
+        buscar(number, agenda)
+
+    } else if (select == "4") {
+        let number = prompt("Número do contato: ")
+        deletar(number, agenda)
+
+    } else {
+        print("Escolha uma opção.")
+    }
+
+} while (confirm("Quer voltar a página inicial? ") ? true : false);
+    </script>
+</body>
+</html>
