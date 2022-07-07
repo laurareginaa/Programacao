@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function somar(a,b){
+            return Number(a) + Number(b)
+        }
+        function sub(a,b){
+            return Number(a) - Number(b)
+        }
+        function mult(a,b){
+            return Number(a) * Number(b)
+        }
+        function div(a,b){
+            return Number(a) / Number(b)
+        }
+
+        do {
+            
+            var numero1 = prompt("ESCOLHA UM NÚMERO: ")
+            var numero2 = prompt("ESCOLHA OUTRO NÚMERO: ")
+            var escolha = prompt(` 1 - SOMA \n 2 - SUBTRAÇÃO \n 3 - MULTIPLICAÇÃO \n 4 - DIVISÃO`)
+
+            if (escolha == 1) {
+                alert(somar(numero1,numero2))
+            }else if (escolha == 2){
+                alert(sub(numero1,numero2))
+            }else if (escolha == 3){
+                alert(mult(numero1,numero2))
+            }else if (escolha == 4){
+                alert(div(numero1,numero2))
+            }
+
+        } while (confirm("Você deseja voltar ao menu?") ? true : false);
+    </script>
+</body>
+</html>
